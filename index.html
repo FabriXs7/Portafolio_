@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio · Presentation</title>
+<meta name="description" content="Portfolio and presentation — Blender 3D, websites, and software.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__dot"></span>
+    <span id="navName">Tu Nombre</span>
+  </a>
+  <nav class="nav__links">
+    <a href="#top">Home</a>
+    <a href="#proyectos">Projects</a>
+    <a href="#contacto">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO / CARTA DE PRESENTACIÓN ============ -->
+  <section class="hero">
+    <div class="hero__grid">
+
+      <div class="hero__intro">
+        <p class="eyebrow">// Who I am</p>
+        <h1 id="heroName" class="hero__name">Tu Nombre</h1>
+        <p id="heroTagline" class="hero__tagline">Construyo mundos en Blender y productos en código.</p>
+        <p id="heroBio" class="hero__bio">Bio corta va aquí.</p>
+
+        <div class="hero__actions">
+          <a href="#proyectos" class="btn btn--primary">View projects</a>
+          <a href="#contacto" class="btn btn--ghost">Contact me</a>
+        </div>
+      </div>
+
+      <div class="terminal" role="img" aria-label="Tarjeta de perfil">
+        <div class="terminal__bar">
+          <span class="terminal__light terminal__light--r"></span>
+          <span class="terminal__light terminal__light--y"></span>
+          <span class="terminal__light terminal__light--g"></span>
+          <span class="terminal__title">whoami.sh</span>
+        </div>
+        <div class="terminal__body">
+          <p class="terminal__line"><span class="terminal__prompt">$</span> whoami</p>
+          <dl class="terminal__fields">
+            <div class="terminal__row"><dt>name</dt><dd id="tName">—</dd></div>
+            <div class="terminal__row"><dt>role</dt><dd id="tRole">—</dd></div>
+            <div class="terminal__row"><dt>location</dt><dd id="tLocation">—</dd></div>
+            <div class="terminal__row"><dt>experience</dt><dd id="tExperience">—</dd></div>
+            <div class="terminal__row"><dt>status</dt><dd id="tAvailability" class="terminal__status">—</dd></div>
+          </dl>
+          <p class="terminal__line terminal__cursor"><span class="terminal__prompt">$</span> <span class="blink">▍</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <section id="proyectos" class="projects">
+    <div class="section-head">
+      <p class="eyebrow">// projects</p>
+      <h2>Everything I've built</h2>
+    </div>
+
+    <!-- Tabs estilo "archivos abiertos" -->
+    <div class="tabs" role="tablist" aria-label="Categorías de proyectos">
+      <button class="tab is-active" role="tab" aria-selected="true" data-tab="blender">
+        <span class="tab__dot tab__dot--blender"></span>projects.blend
+      </button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="web">
+        <span class="tab__dot tab__dot--web"></span>pages.html
+      </button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="software">
+        <span class="tab__dot tab__dot--software"></span>software.exe
+      </button>
+    </div>
+
+    <!-- Panel: Blender -->
+    <div class="panel is-active" id="panel-blender" role="tabpanel">
+
+      <div class="subtabs" role="tablist" aria-label="Categorías de Blender">
+        <button class="subtab is-active" data-subtab="proyectos">Projects</button>
+        <button class="subtab" data-subtab="ropa">Clothing</button>
+        <button class="subtab" data-subtab="mapas">Maps</button>
+      </div>
+
+      <div class="subpanel is-active" id="subpanel-proyectos">
+        <div class="grid grid--cards" id="grid-blender-proyectos"></div>
+      </div>
+      <div class="subpanel" id="subpanel-ropa" hidden>
+        <div class="grid grid--cards" id="grid-blender-ropa"></div>
+      </div>
+      <div class="subpanel" id="subpanel-mapas" hidden>
+        <div class="grid grid--videos" id="grid-blender-mapas"></div>
+      </div>
+
+    </div>
+
+    <!-- Panel: Web -->
+    <div class="panel" id="panel-web" role="tabpanel" hidden>
+      <div class="grid grid--web" id="grid-web"></div>
+    </div>
+
+    <!-- Panel: Software -->
+    <div class="panel" id="panel-software" role="tabpanel" hidden>
+      <div class="stack" id="grid-software"></div>
+    </div>
+
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section id="contacto" class="contact">
+    <div class="section-head">
+      <p class="eyebrow">// contact</p>
+      <h2>Let's talk about your next project</h2>
+    </div>
+    <div class="contact__row">
+      <a id="contactEmail" class="btn btn--primary" href="mailto:">Send an email</a>
+      <div class="contact__social" id="contactSocial"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+<p>© <span id="year"></span> <span id="footerName">Fabricio</span>. Made with Blender, code, and lots of coffee.</p>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar imagen">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
