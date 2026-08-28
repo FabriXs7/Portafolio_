@@ -26,9 +26,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
       - name: Download artifact from build job
@@ -48,5 +45,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'fabricio-portafolio'
-          slot-name: 'Production'
           package: .
