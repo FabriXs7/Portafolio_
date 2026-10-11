@@ -1,5 +1,19 @@
 # Carta de presentación — Portafolio
 
+Public portfolio: [fabrixs7.github.io/Portafolio_](https://fabrixs7.github.io/Portafolio_/).
+
+### Collections added in October 2026
+
+- `blender.weapons`: 17 weapon models in collection order, with English names and descriptions. Images live in `images/weapons/`.
+- `blender.animations`: creature animation videos, shown as clickable YouTube previews.
+- `blender.assets`: decorative mirrors and furniture, with images in `images/props/`.
+- `blender.mapas`: map videos, including the Thematic Maps showcase.
+- `roblox`: experience trailers and the link to play each game, in the **Roblox experiences.rbl** tab.
+
+Model cards open a keyboard-accessible viewer (left/right arrows to browse; Escape to close). Videos load their player only when selected. The character gallery initially shows 12 previews and can expand to show the complete collection.
+
+GitHub Pages publishes the root folder of `main`. After changing content, commit and push to `main`, then check the **pages build and deployment** run. The existing Azure workflow is retained. Update the version suffix on the CSS and JavaScript links in `index.html` when shipping future changes so returning visitors receive the updated files.
+
 Sitio de una sola página, listo para editar por código y desplegar en **Azure Static Web Apps**. No usa backend ni base de datos: todo el contenido vive en un solo archivo (`data.js`), así que actualizar el sitio es tan simple como editar texto y subir imágenes.
 
 ## Estructura del proyecto

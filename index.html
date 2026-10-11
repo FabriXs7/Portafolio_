@@ -3,24 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio · Presentation</title>
-<meta name="description" content="Portfolio and presentation — Blender 3D, websites, and software.">
+<title>Fabricio | 3D Art, Roblox & Development</title>
+<meta name="description" content="Explore Fabricio's Blender models, stylized weapons, decorative assets, maps, animations, Roblox experiences, websites, and software.">
+<meta name="theme-color" content="#09090c">
+<meta property="og:title" content="Fabricio | 3D Art, Roblox & Development">
+<meta property="og:description" content="I build worlds in Blender and products in code. Explore my models, environments, animations, and interactive projects.">
+<meta property="og:image" content="https://fabrixs7.github.io/Portafolio_/images/props/decorative-props-collection.png">
+<meta property="og:url" content="https://fabrixs7.github.io/Portafolio_/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261011">
 </head>
 <body>
 
 <div class="noise-overlay" aria-hidden="true"></div>
+<a class="skip-link" href="#proyectos">Skip to projects</a>
 
 <!-- ============ NAV ============ -->
 <header class="nav">
   <a class="nav__brand" href="#top">
     <span class="nav__dot"></span>
-    <span id="navName">Tu Nombre</span>
+    <span id="navName">Fabricio</span>
   </a>
   <nav class="nav__links">
     <a href="#top">Home</a>
@@ -37,9 +43,12 @@
 
       <div class="hero__intro">
         <p class="eyebrow">// Who I am</p>
-        <h1 id="heroName" class="hero__name">Tu Nombre</h1>
-        <p id="heroTagline" class="hero__tagline">Construyo mundos en Blender y productos en código.</p>
-        <p id="heroBio" class="hero__bio">Bio corta va aquí.</p>
+        <h1 id="heroName" class="hero__name">Fabricio</h1>
+        <p id="heroTagline" class="hero__tagline">I build worlds in Blender and products in code.</p>
+        <p id="heroBio" class="hero__bio">I create 3D models, environments, and interactive projects.</p>
+        <div class="hero__skills" aria-label="Creative disciplines">
+          <span>3D modeling</span><span>World building</span><span>Development</span>
+        </div>
 
         <div class="hero__actions">
           <a href="#proyectos" class="btn btn--primary">View projects</a>
@@ -47,7 +56,7 @@
         </div>
       </div>
 
-      <div class="terminal" role="img" aria-label="Tarjeta de perfil">
+      <div class="terminal" aria-label="Profile details">
         <div class="terminal__bar">
           <span class="terminal__light terminal__light--r"></span>
           <span class="terminal__light terminal__light--y"></span>
@@ -68,6 +77,24 @@
       </div>
 
     </div>
+
+    <div class="featured" aria-label="Featured collections">
+      <div class="featured__heading"><span class="eyebrow">// selected work</span><span>A closer look at what I create</span></div>
+      <div class="featured__grid">
+        <a class="feature-card" href="#proyectos" data-go-tab="blender" data-go-subtab="weapons">
+          <div class="feature-card__media"><img src="images/weapons/01-candy-rifle.png" alt="Candy Rifle model in Blender" width="687" height="422"></div>
+          <div class="feature-card__body"><span class="feature-card__label">01 / Blender</span><h2>Stylized weapons <span aria-hidden="true">↗</span></h2><p>17 designs. One imaginative collection.</p></div>
+        </a>
+        <a class="feature-card" href="#proyectos" data-go-tab="blender" data-go-subtab="assets">
+          <div class="feature-card__media"><img src="images/props/decorative-props-collection.png" alt="Three decorative mirrors and a curved-leg table" width="736" height="423"></div>
+          <div class="feature-card__body"><span class="feature-card__label">02 / Blender</span><h2>Details with character <span aria-hidden="true">↗</span></h2><p>Decorative mirrors and furniture.</p></div>
+        </a>
+        <a class="feature-card" href="#proyectos" data-go-tab="roblox">
+          <div class="feature-card__media feature-card__media--video"><img src="https://i.ytimg.com/vi/_7_Asty2Rl0/hqdefault.jpg" alt="Shoot at the Doors trailer preview" width="480" height="360"><span class="feature-card__play" aria-hidden="true">▶</span></div>
+          <div class="feature-card__body"><span class="feature-card__label">03 / Roblox</span><h2>Shoot at the Doors <span aria-hidden="true">↗</span></h2><p>Watch the trailer. Play the experience.</p></div>
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- ============ PROYECTOS ============ -->
@@ -75,51 +102,87 @@
     <div class="section-head">
       <p class="eyebrow">// projects</p>
       <h2>Everything I've built</h2>
+      <p class="section-head__description">From character studies to playable worlds. Explore a collection below.</p>
     </div>
 
     <!-- Tabs estilo "archivos abiertos" -->
-    <div class="tabs" role="tablist" aria-label="Categorías de proyectos">
-      <button class="tab is-active" role="tab" aria-selected="true" data-tab="blender">
+    <div class="tabs" role="tablist" aria-label="Project categories">
+      <button class="tab is-active" id="tab-blender" role="tab" aria-controls="panel-blender" aria-selected="true" data-tab="blender">
         <span class="tab__dot tab__dot--blender"></span>projects.blend
       </button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="web">
+      <button class="tab" id="tab-web" role="tab" aria-controls="panel-web" aria-selected="false" tabindex="-1" data-tab="web">
         <span class="tab__dot tab__dot--web"></span>pages.html
       </button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="software">
+      <button class="tab" id="tab-software" role="tab" aria-controls="panel-software" aria-selected="false" tabindex="-1" data-tab="software">
         <span class="tab__dot tab__dot--software"></span>software.exe
+      </button>
+      <button class="tab" id="tab-roblox" role="tab" aria-controls="panel-roblox" aria-selected="false" tabindex="-1" data-tab="roblox">
+        <span class="tab__dot tab__dot--roblox"></span>Roblox experiences.rbl
       </button>
     </div>
 
     <!-- Panel: Blender -->
-    <div class="panel is-active" id="panel-blender" role="tabpanel">
+    <div class="panel is-active" id="panel-blender" role="tabpanel" aria-labelledby="tab-blender">
 
-      <div class="subtabs" role="tablist" aria-label="Categorías de Blender">
-        <button class="subtab is-active" data-subtab="proyectos">Projects</button>
-        <button class="subtab" data-subtab="ropa">Clothing</button>
-        <button class="subtab" data-subtab="mapas">Maps</button>
+      <div class="subtabs" role="tablist" aria-label="Blender collections">
+        <button class="subtab is-active" id="subtab-proyectos" role="tab" aria-controls="subpanel-proyectos" aria-selected="true" data-subtab="proyectos">Projects</button>
+        <button class="subtab" id="subtab-ropa" role="tab" aria-controls="subpanel-ropa" aria-selected="false" tabindex="-1" data-subtab="ropa">Clothing</button>
+        <button class="subtab" id="subtab-mapas" role="tab" aria-controls="subpanel-mapas" aria-selected="false" tabindex="-1" data-subtab="mapas">Maps</button>
+        <button class="subtab" id="subtab-weapons" role="tab" aria-controls="subpanel-weapons" aria-selected="false" tabindex="-1" data-subtab="weapons">Weapons</button>
+        <button class="subtab" id="subtab-animations" role="tab" aria-controls="subpanel-animations" aria-selected="false" tabindex="-1" data-subtab="animations">Animations</button>
+        <button class="subtab" id="subtab-assets" role="tab" aria-controls="subpanel-assets" aria-selected="false" tabindex="-1" data-subtab="assets">Assets</button>
       </div>
 
-      <div class="subpanel is-active" id="subpanel-proyectos">
+      <div class="subpanel is-active" id="subpanel-proyectos" role="tabpanel" aria-labelledby="subtab-proyectos">
+        <div class="collection-head"><div><h3>Character modeling</h3><p>Character designs and a look inside the Blender process.</p></div><span class="collection-head__count" id="count-proyectos"></span></div>
         <div class="grid grid--cards" id="grid-blender-proyectos"></div>
+        <button class="btn btn--ghost gallery-toggle" id="characterToggle" aria-expanded="false" aria-controls="grid-blender-proyectos" hidden>Explore all character previews</button>
       </div>
-      <div class="subpanel" id="subpanel-ropa" hidden>
+      <div class="subpanel" id="subpanel-ropa" role="tabpanel" aria-labelledby="subtab-ropa" hidden>
+        <div class="collection-head"><div><h3>Clothing & outfits</h3><p>Wearable designs, from everyday essentials to playful themed pieces.</p></div><span class="collection-head__count" id="count-ropa"></span></div>
         <div class="grid grid--cards" id="grid-blender-ropa"></div>
       </div>
-      <div class="subpanel" id="subpanel-mapas" hidden>
+      <div class="subpanel" id="subpanel-mapas" role="tabpanel" aria-labelledby="subtab-mapas" hidden>
+        <div class="collection-head"><div><h3>Worlds & environments</h3><p>Watch each map showcase to explore its layout and atmosphere.</p></div><span class="collection-head__count" id="count-mapas"></span></div>
         <div class="grid grid--videos" id="grid-blender-mapas"></div>
+      </div>
+
+      <div class="subpanel" id="subpanel-weapons" role="tabpanel" aria-labelledby="subtab-weapons" hidden>
+        <div class="collection-head"><div><h3>Stylized weapon collection</h3><p>Candy, lightning, ice, and more. Select a model for a closer look.</p></div><span class="collection-head__count" id="count-weapons"></span></div>
+        <div class="grid grid--cards" id="grid-blender-weapons"></div>
+      </div>
+      <div class="subpanel" id="subpanel-animations" role="tabpanel" aria-labelledby="subtab-animations" hidden>
+        <div class="collection-head"><div><h3>Characters in motion</h3><p>Bringing creatures to life, one pose and movement at a time.</p></div><span class="collection-head__count" id="count-animations"></span></div>
+        <div class="grid grid--showcase" id="grid-blender-animations"></div>
+      </div>
+      <div class="subpanel" id="subpanel-assets" role="tabpanel" aria-labelledby="subtab-assets" hidden>
+        <div class="collection-head"><div><h3>Decorative assets & props</h3><p>Small details that give an environment its personality.</p></div><span class="collection-head__count" id="count-assets"></span></div>
+        <div class="collection-cover">
+          <img src="images/props/decorative-props-collection.png" alt="The complete decorative collection: three mirrors and a table" loading="lazy" width="736" height="423">
+          <div><p class="eyebrow">// collection overview</p><h3>Made to belong in a world.</h3><p>Three unique mirror designs and a classic curved-leg table. A Blender collection exploring ornamental shapes, silhouettes, and interior details.</p><span class="asset-tag">Blender / Decorative modeling</span></div>
+        </div>
+        <div class="grid grid--assets" id="grid-blender-assets"></div>
       </div>
 
     </div>
 
     <!-- Panel: Web -->
-    <div class="panel" id="panel-web" role="tabpanel" hidden>
+    <div class="panel" id="panel-web" role="tabpanel" aria-labelledby="tab-web" hidden>
+      <div class="collection-head"><div><h3>Web projects</h3><p>Interfaces and products built for real interactions.</p></div></div>
       <div class="grid grid--web" id="grid-web"></div>
     </div>
 
     <!-- Panel: Software -->
-    <div class="panel" id="panel-software" role="tabpanel" hidden>
+    <div class="panel" id="panel-software" role="tabpanel" aria-labelledby="tab-software" hidden>
       <div class="stack" id="grid-software"></div>
     </div>
+
+    <div class="panel" id="panel-roblox" role="tabpanel" aria-labelledby="tab-roblox" hidden>
+      <div class="collection-head"><div><h3>Roblox experiences</h3><p>From a creative idea to a world you can play. Preview the trailer and jump in.</p></div><span class="asset-tag">Roblox</span></div>
+      <div class="grid grid--showcase" id="grid-roblox"></div>
+    </div>
+
+    <noscript><p class="empty-note">Please enable JavaScript to explore the project collections.</p></noscript>
 
   </section>
 
@@ -142,12 +205,18 @@
 </footer>
 
 <!-- ============ LIGHTBOX ============ -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar imagen">&times;</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+  <div class="lightbox__toolbar"><span class="eyebrow">// asset viewer</span><button class="lightbox__close" id="lightboxClose" aria-label="Close preview" autofocus>&times;</button></div>
+  <div class="lightbox__stage">
+    <button class="lightbox__arrow" id="lightboxPrev" aria-label="Previous image">←</button>
+    <img id="lightboxImg" alt="">
+    <button class="lightbox__arrow" id="lightboxNext" aria-label="Next image">→</button>
+  </div>
+  <div class="lightbox__caption"><div><h2 id="lightboxTitle"></h2><p id="lightboxDescription"></p></div><span id="lightboxCount" aria-live="polite"></span></div>
+  <p class="lightbox__hint">Use ← → to browse · Esc to close</p>
+</dialog>
 
-<script src="data.js"></script>
-<script src="script.js"></script>
+<script src="data.js?v=20261011"></script>
+<script src="script.js?v=20261011"></script>
 </body>
 </html>

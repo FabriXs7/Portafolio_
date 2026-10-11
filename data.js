@@ -535,9 +535,81 @@ window.SITE_DATA = {
       { title: "Map 2", youtube: "https://youtu.be/HoOsTJxO_GQ" },
       { title: "Map 3", youtube: "https://youtu.be/fqDIyp-VmCw" },
       { title: "Map 4", youtube: "https://youtu.be/mfdhy2xcn48" },
-      { title: "Map 5", youtube: "https://youtu.be/qznCoRY2GeE" }
+      { title: "Map 5", youtube: "https://youtu.be/qznCoRY2GeE" },
+      {
+        title: "Thematic Maps",
+        youtube: "https://youtu.be/8f9YU6cMNa8",
+        description: "A showcase of themed environments, with distinct layouts, atmosphere, and visual details."
+      }
+    ],
+
+    // Weapon models, in the original collection order.
+    weapons: [
+      { title: "Candy Rifle", image: "images/weapons/01-candy-rifle.png", description: "A playful candy-inspired rifle with rounded details and a bold, oversized muzzle.", tag: "Candy / Rifle" },
+      { title: "Lightning Rifle", image: "images/weapons/02-lightning-rifle.png", description: "A stylized rifle with a lightning-bolt magazine, angular shapes, and a mounted scope.", tag: "Lightning / Rifle" },
+      { title: "Ray Gun 1", image: "images/weapons/03-ray-gun-1.png", description: "A retro science-fiction ray gun with a circular chamber, sculpted grip, and antenna details.", tag: "Sci-fi / Pistol" },
+      { title: "Chocolate Pistol", image: "images/weapons/04-chocolate-pistol.png", description: "A chocolate-bar pistol with segmented panels and a sculpted, melting-style grip.", tag: "Chocolate / Pistol" },
+      { title: "Angelic Pistol", image: "images/weapons/05-angelic-pistol.png", description: "An angelic pistol featuring a detailed wing motif that flows across the slide and grip.", tag: "Angelic / Pistol" },
+      { title: "Fire Pistol", image: "images/weapons/06-fire-pistol.png", description: "A flame-themed pistol with flowing sculpted shapes around the grip, trigger, and rear profile.", tag: "Fire / Pistol" },
+      { title: "Fire Rifle", image: "images/weapons/07-fire-rifle.png", description: "A fantasy rifle with sculpted flame details and a creature-like muzzle silhouette.", tag: "Fire / Rifle" },
+      { title: "Water Pistol", image: "images/weapons/08-water-pistol.png", description: "A water-inspired pistol with wave-like ornaments and an elongated barrel attachment.", tag: "Water / Pistol" },
+      { title: "Water AK", image: "images/weapons/09-water-ak.png", description: "An AK-style rifle with flowing water shapes integrated into the stock and barrel.", tag: "Water / Rifle" },
+      { title: "Ice Glock", image: "images/weapons/10-ice-glock.png", description: "A Glock-inspired pistol framed by jagged ice crystals and a textured grip.", tag: "Ice / Pistol" },
+      { title: "Ice Rifle", image: "images/weapons/11-ice-rifle.png", description: "An ice-themed rifle with crystalline spikes on the stock, scope, magazine, and muzzle.", tag: "Ice / Rifle" },
+      { title: "Angelic Rifle", image: "images/weapons/12-angelic-rifle.png", description: "A stylized angelic rifle combining wing accents, a mounted scope, and geometric details.", tag: "Angelic / Rifle" },
+      { title: "Candy Pistol", image: "images/weapons/13-candy-pistol.png", description: "A whimsical candy pistol with rounded chambers, a flared muzzle, and a hanging candy bag.", tag: "Candy / Pistol" },
+      { title: "Lightning Pistol", image: "images/weapons/14-lightning-pistol.png", description: "A futuristic pistol with layered lightning-inspired contours and a sharp, angular grip.", tag: "Lightning / Pistol" },
+      { title: "Ray Gun 2", image: "images/weapons/15-ray-gun-2.png", description: "A second ray gun design with mechanical layers, a circular rear chamber, and a distinctive muzzle.", tag: "Sci-fi / Pistol" },
+      { title: "Chocolate Rifle", image: "images/weapons/16-chocolate-rifle.png", description: "A chocolate-themed rifle with bar-like paneling across the magazine, body, and barrel.", tag: "Chocolate / Rifle" },
+      { title: "Six Seven Rifle", image: "images/weapons/17-six-seven-rifle.png", description: "A playful rifle built around a bold 67 emblem, rounded mechanical forms, and sculpted hands.", tag: "Novelty / Rifle" }
+    ],
+
+    animations: [
+      {
+        title: "Beast Idle & Walk Animations",
+        youtube: "https://youtu.be/2tAPjoYATtQ",
+        description: "A creature animation showcase featuring idle poses and walk cycles for beast characters.",
+        tag: "Creature animation"
+      }
+    ],
+
+    assets: [
+      {
+        title: "Ornate Heart Mirror",
+        image: "images/props/ornate-heart-mirror.png",
+        description: "An oval decorative mirror with an intricate curling frame and heart-shaped ornaments.",
+        tag: "Decorative prop"
+      },
+      {
+        title: "Floral Hand Mirror",
+        image: "images/props/floral-hand-mirror.png",
+        description: "An elegant oval hand mirror with a floral crown and a slender looped handle.",
+        tag: "Decorative prop"
+      },
+      {
+        title: "Winged Mirror",
+        image: "images/props/winged-mirror.png",
+        description: "A fantasy-inspired mirror with a winged crest and delicate ribbon details around the frame.",
+        tag: "Decorative prop"
+      },
+      {
+        title: "Curved-Leg Table",
+        image: "images/props/curved-leg-table.png",
+        description: "A classic table with a shaped apron and curved legs, modeled for decorative interior scenes.",
+        tag: "Furniture"
+      }
     ]
   },
+
+  roblox: [
+    {
+      title: "Shoot at the Doors",
+      youtube: "https://youtu.be/_7_Asty2Rl0",
+      link: "https://www.roblox.com/games/123471961775558/Shoot-at-the-doors",
+      description: "Explore the experience through its gameplay trailer, then jump into the game on Roblox.",
+      tag: "Roblox experience"
+    }
+  ],
 
   // ---------- PROYECTOS DE PÁGINAS WEB ---------- 
   web: [
