@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=20261021c">
+<link rel="stylesheet" href="styles.css?v=20261022a">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -53,6 +53,11 @@
         <div class="hero__actions">
           <a href="#selected" class="btn btn--primary">Explore my work <span aria-hidden="true">↘</span></a>
           <a href="#contacto" class="text-link">Let's collaborate <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="motion-settings">
+          <button class="motion-toggle" data-motion-toggle type="button" aria-pressed="false" aria-describedby="motionHint" hidden><span class="motion-toggle__dot" aria-hidden="true"></span><span data-motion-label>Animations</span></button>
+          <button class="motion-reset" id="motionReset" type="button" hidden>Use device setting</button>
+          <p id="motionHint" class="motion-settings__hint" role="status" hidden></p>
         </div>
       </div>
       <div class="studio" id="studio" role="group" aria-label="Interactive 3D brand study">
@@ -209,7 +214,7 @@
 </main>
 
 <footer class="footer">
-<a class="nav__brand" href="#top"><span class="nav__mark" aria-hidden="true">f.</span><span id="footerName">Fabricio</span></a><p>© <span id="year"></span> · Crafted with curiosity. Built with purpose.</p><a href="#top" class="text-link">Back to top ↑</a>
+<a class="nav__brand" href="#top"><span class="nav__mark" aria-hidden="true">f.</span><span id="footerName">Fabricio</span></a><p>© <span id="year"></span> · Crafted with curiosity. Built with purpose.</p><div class="footer__actions"><button class="motion-toggle" data-motion-toggle type="button" aria-pressed="false" hidden><span class="motion-toggle__dot" aria-hidden="true"></span><span data-motion-label>Animations</span></button><a href="#top" class="text-link">Back to top ↑</a></div>
 </footer>
 
 <!-- ============ LIGHTBOX ============ -->
@@ -224,9 +229,9 @@
   <p class="lightbox__hint">Use ← → to browse · Esc to close</p>
 </dialog>
 
-<script src="data.js?v=20261021c"></script>
-<script src="script.js?v=20261021c"></script>
-<script src="motion.js?v=20261021c"></script>
-<script src="scene.js?v=20261021c" defer></script>
+<script src="data.js?v=20261022a"></script>
+<script src="script.js?v=20261022a"></script>
+<script src="motion.js?v=20261022a"></script>
+<script src="scene.js?v=20261022a" defer></script>
 </body>
 </html>

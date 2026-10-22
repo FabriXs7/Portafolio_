@@ -6,6 +6,8 @@ Public portfolio: [fabrixs7.github.io/Portafolio_](https://fabrixs7.github.io/Po
 
 The portfolio uses a black-and-white foundation with blue and gold accents, an interactive Three.js F monogram, a seven-category selected-work carousel, and floating social links. Motion respects reduced-motion preferences and pauses when hidden or offscreen. Project imagery retains its original colors.
 
+The **Animations on/off** controls in the introduction and footer let visitors override the device preference. The choice is remembered on this site; **Use device setting** restores automatic behavior. An explicit `?motion=full` or `?motion=reduced` link also selects and remembers that mode. Storage failures do not prevent switching modes. Without a saved choice, the device's reduced-motion preference is respected.
+
 `motion.js` handles interface motion and `scene.js` manages the 3D study. Three.js is served locally with its MIT license in `vendor/THREE-LICENSE.txt`. Social SVGs come from Simple Icons, with the CC0 license in `images/social/LICENSE.md`. The atmospheric studio background was created in Google Flow for this portfolio.
 
 ### Collections added in October 2026

@@ -3,13 +3,51 @@
   'use strict';
   const query = new URLSearchParams(location.search).get('motion');
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
-  const motion = window.PortfolioMotion = { reduced: query === 'reduced' || (query !== 'full' && preference.matches) };
+  const storageKey = 'fabricio-motion';
+  const validPreference = value => ['full', 'reduced'].includes(value);
+  let saved;
+  try { saved = localStorage.getItem(storageKey); } catch { /* Preferences still work without storage. */ }
+  let selectedPreference = validPreference(query) ? query : validPreference(saved) ? saved : 'system';
+  const motion = window.PortfolioMotion = { reduced: false };
+  const motionButtons = [...document.querySelectorAll('[data-motion-toggle]')];
+  const motionHint = document.getElementById('motionHint');
+  const motionReset = document.getElementById('motionReset');
+  function savePreference() {
+    try {
+      if (selectedPreference === 'system') localStorage.removeItem(storageKey);
+      else localStorage.setItem(storageKey, selectedPreference);
+    } catch { /* A blocked storage API must not disable the controls. */ }
+  }
   const setPreference = () => {
-    motion.reduced = query === 'reduced' || (query !== 'full' && preference.matches);
+    motion.reduced = selectedPreference === 'reduced' || (selectedPreference === 'system' && preference.matches);
     document.documentElement.dataset.motion = motion.reduced ? 'reduced' : 'full';
+    motionButtons.forEach(button => {
+      button.hidden = false;
+      button.setAttribute('aria-pressed', String(!motion.reduced));
+      button.querySelector('[data-motion-label]').textContent = motion.reduced ? 'Animations off' : 'Animations on';
+    });
+    motionHint.hidden = !motion.reduced;
+    motionHint.textContent = selectedPreference === 'system' && motion.reduced
+      ? 'Your device prefers reduced motion. Turn animations on to explore.'
+      : 'Animations are paused. You can still explore every project.';
+    motionReset.hidden = selectedPreference === 'system';
     document.dispatchEvent(new Event('motionchange'));
   };
-  preference.addEventListener('change', setPreference);
+  function choosePreference(value) {
+    selectedPreference = value;
+    savePreference();
+    const url = new URL(location.href);
+    if (url.searchParams.has('motion')) {
+      if (value === 'system') url.searchParams.delete('motion');
+      else url.searchParams.set('motion', value);
+      history.replaceState(null, '', url);
+    }
+    setPreference();
+  }
+  motionButtons.forEach(button => button.addEventListener('click', () => choosePreference(motion.reduced ? 'full' : 'reduced')));
+  motionReset.addEventListener('click', () => choosePreference('system'));
+  preference.addEventListener('change', () => { if (selectedPreference === 'system') setPreference(); });
+  if (validPreference(query)) savePreference();
   setPreference();
   document.documentElement.classList.add('motion-ready');
 

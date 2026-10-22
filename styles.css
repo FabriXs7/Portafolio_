@@ -420,6 +420,16 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   margin-top:32px
 }
 
+.motion-settings { display:flex; align-items:center; flex-wrap:wrap; gap:10px 16px; margin-top:20px; }
+.motion-toggle { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:9px 12px; border:1px solid var(--border-strong); border-radius:24px; background:#ffffff05; color:var(--text-muted); font:10px var(--font-mono); cursor:pointer; }
+.motion-toggle__dot { width:6px; height:6px; border-radius:50%; background:#858996; }
+.motion-toggle[aria-pressed='true'] { color:var(--text); border-color:#729eff55; }
+.motion-toggle[aria-pressed='true'] .motion-toggle__dot { background:var(--accent-secondary); }
+.motion-toggle:active { transform:scale(.97); }
+.motion-reset { min-height:44px; padding:8px 0; border:0; background:none; color:var(--text-muted); font:10px var(--font-mono); text-decoration:underline; text-underline-offset:4px; cursor:pointer; }
+.motion-settings__hint { flex-basis:100%; max-width:360px; color:var(--text-muted); font-size:11px; line-height:1.7; }
+.footer__actions { display:flex; align-items:center; justify-content:flex-end; gap:20px; flex-wrap:wrap; }
+
 .hero__foot {
   display:flex;
   justify-content:space-between;
@@ -1616,7 +1626,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible {
   transform:none
 }
 
-.motion-ready .hero__intro>*,.motion-ready .hero__foot {
+.motion-ready .hero__intro>:not(.motion-settings),.motion-ready .hero__foot {
   animation:enter-up 750ms both var(--ease-out)
 }
 
