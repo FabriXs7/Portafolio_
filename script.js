@@ -19,13 +19,34 @@
     emailButton.rel = "noopener noreferrer";
   }
   (profile.social || []).forEach((social) => {
+    const slug = ({ Instagram: "instagram", X: "x", Twitter: "x", Discord: "discord" })[social.label];
+    const label = social.label === "Twitter" ? "X" : social.label;
+    const wrapper = document.createElement("div");
+    wrapper.className = "social-float social-float--" + (slug || "other");
     const link = document.createElement("a");
     link.href = safeUrl(social.url);
-    link.textContent = social.label;
+    link.setAttribute("aria-label", "Visit " + label + " profile (opens in a new tab)");
+    if (slug) {
+      const icon = document.createElement("img");
+      icon.src = "images/social/" + slug + ".svg";
+      icon.alt = "";
+      icon.width = icon.height = 34;
+      icon.setAttribute("aria-hidden", "true");
+      link.appendChild(icon);
+    }
+    const name = document.createElement("span");
+    name.className = "social-bubble__name";
+    name.textContent = label;
+    const arrow = document.createElement("span");
+    arrow.className = "social-bubble__arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+    link.append(name, arrow);
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.className = "btn btn--ghost";
-    document.getElementById("contactSocial").appendChild(link);
+    link.className = "social-bubble";
+    wrapper.appendChild(link);
+    document.getElementById("contactSocial").appendChild(wrapper);
   });
 
   renderCards("grid-blender-proyectos", blender.proyectos, buildModelCard);
@@ -154,6 +175,7 @@
       panel.hidden = !active;
       panel.classList.toggle("is-active", active);
     });
+    document.dispatchEvent(new CustomEvent("collectionchange", { detail: { panel: prefix + tab.dataset[key] } }));
   }
   function setupTabs(group, panelSelector, prefix, key) {
     group.forEach((tab, index) => {

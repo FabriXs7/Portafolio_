@@ -13,7 +13,7 @@ window.SITE_DATA = {
     email: "fabriciocontact04@gmail.com",
     social: [
       { label: "Instagram", url: "https://www.instagram.com/ffabri_lm/" },
-      { label: "Twitter", url: "https://x.com/XgFabri55371" },
+      { label: "X", url: "https://x.com/XgFabri55371" },
       { label: "Discord", url: "https://discord.com/users/1043719320410280016" }
     ]
   },

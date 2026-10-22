@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Fabricio | 3D Art, Roblox & Development</title>
 <meta name="description" content="Explore Fabricio's Blender models, stylized weapons, decorative assets, maps, animations, Roblox experiences, websites, and software.">
-<meta name="theme-color" content="#09090c">
+<meta name="theme-color" content="#090a0d">
 <meta property="og:title" content="Fabricio | 3D Art, Roblox & Development">
 <meta property="og:description" content="I build worlds in Blender and products in code. Explore my models, environments, animations, and interactive projects.">
 <meta property="og:image" content="https://fabrixs7.github.io/Portafolio_/images/props/decorative-props-collection.png">
@@ -15,7 +15,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=20261011">
+<link rel="stylesheet" href="styles.css?v=20261021c">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -25,83 +26,71 @@
 <!-- ============ NAV ============ -->
 <header class="nav">
   <a class="nav__brand" href="#top">
-    <span class="nav__dot"></span>
+    <span class="nav__mark" aria-hidden="true">f.</span>
     <span id="navName">Fabricio</span>
   </a>
-  <nav class="nav__links">
-    <a href="#top">Home</a>
-    <a href="#proyectos">Projects</a>
-    <a href="#contacto">Contact</a>
+  <nav class="nav__links" aria-label="Main navigation">
+    <a href="#top" class="is-current">Home</a>
+    <a href="#proyectos">Work</a>
+    <a href="#about">About</a>
+    <a href="#contacto">Contact <span aria-hidden="true">↗</span></a>
   </nav>
+  <a href="#contacto" class="nav__availability"><span class="status-dot"></span>Available for projects</a>
 </header>
 
 <main id="top">
 
   <!-- ============ HERO / CARTA DE PRESENTACIÓN ============ -->
-  <section class="hero">
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero__atmosphere" aria-hidden="true"></div>
+    <div class="hero__topline"><span>INDEPENDENT CREATIVE / BASED ONLINE</span><span>BLENDER · ROBLOX · CODE</span></div>
     <div class="hero__grid">
-
       <div class="hero__intro">
-        <p class="eyebrow">// Who I am</p>
-        <h1 id="heroName" class="hero__name">Fabricio</h1>
+        <p class="eyebrow hero__identity"><span class="status-dot"></span>Hey, I'm <span id="heroName">Fabricio</span></p>
+        <h1 id="heroTitle">Ideas made<br><span class="gradient-text">playable.</span></h1>
         <p id="heroTagline" class="hero__tagline">I build worlds in Blender and products in code.</p>
-        <p id="heroBio" class="hero__bio">I create 3D models, environments, and interactive projects.</p>
-        <div class="hero__skills" aria-label="Creative disciplines">
-          <span>3D modeling</span><span>World building</span><span>Development</span>
-        </div>
-
+        <p class="hero__summary">Character in every detail.<br> From the first shape to the final experience.</p>
         <div class="hero__actions">
-          <a href="#proyectos" class="btn btn--primary">View projects</a>
-          <a href="#contacto" class="btn btn--ghost">Contact me</a>
+          <a href="#selected" class="btn btn--primary">Explore my work <span aria-hidden="true">↘</span></a>
+          <a href="#contacto" class="text-link">Let's collaborate <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-
-      <div class="terminal" aria-label="Profile details">
-        <div class="terminal__bar">
-          <span class="terminal__light terminal__light--r"></span>
-          <span class="terminal__light terminal__light--y"></span>
-          <span class="terminal__light terminal__light--g"></span>
-          <span class="terminal__title">whoami.sh</span>
-        </div>
-        <div class="terminal__body">
-          <p class="terminal__line"><span class="terminal__prompt">$</span> whoami</p>
-          <dl class="terminal__fields">
-            <div class="terminal__row"><dt>name</dt><dd id="tName">—</dd></div>
-            <div class="terminal__row"><dt>role</dt><dd id="tRole">—</dd></div>
-            <div class="terminal__row"><dt>location</dt><dd id="tLocation">—</dd></div>
-            <div class="terminal__row"><dt>experience</dt><dd id="tExperience">—</dd></div>
-            <div class="terminal__row"><dt>status</dt><dd id="tAvailability" class="terminal__status">—</dd></div>
-          </dl>
-          <p class="terminal__line terminal__cursor"><span class="terminal__prompt">$</span> <span class="blink">▍</span></p>
+      <div class="studio" id="studio" role="group" aria-label="Interactive 3D brand study">
+        <div class="studio__top"><span><i></i>STUDIO / 001</span><span>LIVE 3D</span></div>
+        <div class="studio__canvas" id="studioCanvas" aria-hidden="true"></div>
+        <div class="studio__fallback" id="studioFallback" aria-hidden="true"><span>F</span></div>
+        <div class="studio__label studio__label--one" aria-hidden="true"><span>01</span> SHAPE</div>
+        <div class="studio__label studio__label--two" aria-hidden="true"><span>02</span> BUILD</div>
+        <div class="studio__bottom">
+          <div><span class="studio__caption">A little world of possibilities.</span><p id="sceneHint">Drag to orbit · Interactive brand study</p></div>
+          <div class="studio__controls"><button id="sceneRotate" class="icon-button" aria-label="Rotate 3D scene">↻</button><button id="sceneReset" class="icon-button" aria-label="Reset 3D view">⌖</button></div>
         </div>
       </div>
-
     </div>
+    <div class="hero__foot"><a href="#selected"><span class="scroll-symbol" aria-hidden="true">↓</span>SCROLL TO EXPLORE</a><p>3D artist. World builder. Developer.</p><span class="hero__coordinates" aria-hidden="true">X 00.00 &nbsp; Y 00.00 &nbsp; Z 01.00</span></div>
+  </section>
 
-    <div class="featured" aria-label="Featured collections">
-      <div class="featured__heading"><span class="eyebrow">// selected work</span><span>A closer look at what I create</span></div>
-      <div class="featured__grid">
-        <a class="feature-card" href="#proyectos" data-go-tab="blender" data-go-subtab="weapons">
-          <div class="feature-card__media"><img src="images/weapons/01-candy-rifle.png" alt="Candy Rifle model in Blender" width="687" height="422"></div>
-          <div class="feature-card__body"><span class="feature-card__label">01 / Blender</span><h2>Stylized weapons <span aria-hidden="true">↗</span></h2><p>17 designs. One imaginative collection.</p></div>
-        </a>
-        <a class="feature-card" href="#proyectos" data-go-tab="blender" data-go-subtab="assets">
-          <div class="feature-card__media"><img src="images/props/decorative-props-collection.png" alt="Three decorative mirrors and a curved-leg table" width="736" height="423"></div>
-          <div class="feature-card__body"><span class="feature-card__label">02 / Blender</span><h2>Details with character <span aria-hidden="true">↗</span></h2><p>Decorative mirrors and furniture.</p></div>
-        </a>
-        <a class="feature-card" href="#proyectos" data-go-tab="roblox">
-          <div class="feature-card__media feature-card__media--video"><img src="https://i.ytimg.com/vi/_7_Asty2Rl0/hqdefault.jpg" alt="Shoot at the Doors trailer preview" width="480" height="360"><span class="feature-card__play" aria-hidden="true">▶</span></div>
-          <div class="feature-card__body"><span class="feature-card__label">03 / Roblox</span><h2>Shoot at the Doors <span aria-hidden="true">↗</span></h2><p>Watch the trailer. Play the experience.</p></div>
-        </a>
+  <section class="selected section-shell" id="selected" aria-labelledby="selectedTitle">
+    <div class="section-head section-head--split reveal"><div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="selectedTitle">A few things<br>from my world<span class="accent">.</span></h2></div><p class="section-head__aside">Playful concepts. Carefully built.<br> Drag through a few favorites.</p></div>
+    <div class="work-arc" role="region" aria-roledescription="carousel" aria-label="Selected work">
+      <div class="arc-stage" id="arcStage" tabindex="0" aria-label="Drag to browse or use the left and right arrow keys">
+        <button class="arc-card arc-card--showcase" data-title="Worlds worth exploring" data-category="MAPS & ENVIRONMENTS / BLENDER" data-description="Themed environments with their own layouts, atmosphere, and visual details. Take a tour through the map showcases." data-tab="blender" data-subtab="mapas" aria-label="Select Worlds worth exploring"><img src="https://i.ytimg.com/vi/8f9YU6cMNa8/hqdefault.jpg" alt="Thematic Maps video preview" width="480" height="360" loading="lazy" draggable="false"><span class="arc-card__top">ENVIRONMENTS <span>01</span></span><span class="arc-card__bottom">Thematic Maps <span aria-hidden="true">↗</span></span></button>
+        <button class="arc-card arc-card--showcase" data-title="Beasts in motion" data-category="CREATURE ANIMATION / BLENDER" data-description="From a quiet idle to a full walk cycle. A closer look at how I bring beast characters to life through animation." data-tab="blender" data-subtab="animations" aria-label="Select Beasts in motion"><img src="https://i.ytimg.com/vi/2tAPjoYATtQ/hqdefault.jpg" alt="Beast idle and walk animation video preview" width="480" height="360" loading="lazy" draggable="false"><span class="arc-card__top">ANIMATION <span>02</span></span><span class="arc-card__bottom">Beasts in motion <span aria-hidden="true">↗</span></span></button>
+        <button class="arc-card arc-card--website" data-title="Pgod Points Store" data-category="WEB DESIGN & DEVELOPMENT" data-description="A custom website connecting a Twitch community with a points marketplace. Explore the interface and watch the project walkthrough." data-tab="web" aria-label="Select Pgod Points Store"><img src="images/web/PgodPuntos.png" alt="Pgod community website interface" width="1920" height="900" loading="lazy" draggable="false"><span class="arc-card__top">WEB DEVELOPMENT <span>03</span></span><span class="arc-card__bottom">Pgod Points Store <span aria-hidden="true">↗</span></span></button>
+        <button class="arc-card" data-title="Candy Rifle" data-category="STYLIZED WEAPONS / BLENDER" data-description="A playful concept with candy-inspired details. One of 17 original weapon designs." data-tab="blender" data-subtab="weapons" aria-label="Select Candy Rifle"><img src="images/weapons/01-candy-rifle.png" alt="Candy Rifle model" width="687" height="422" loading="lazy" draggable="false"><span class="arc-card__top">STYLIZED WEAPONS <span>04</span></span><span class="arc-card__bottom">Candy Rifle <span aria-hidden="true">↗</span></span></button>
+        <button class="arc-card" data-title="Details with character" data-category="DECORATIVE ASSETS / BLENDER" data-description="Three ornamental mirrors and a curved-leg table. Small details that make a space feel complete." data-tab="blender" data-subtab="assets" aria-label="Select decorative assets"><img src="images/props/decorative-props-collection.png" alt="Decorative mirrors and furniture collection" width="736" height="423" loading="lazy" draggable="false"><span class="arc-card__top">DECORATIVE ASSETS <span>05</span></span><span class="arc-card__bottom">Decorative collection <span aria-hidden="true">↗</span></span></button>
+        <button class="arc-card arc-card--showcase" data-title="Shoot at the Doors" data-category="PLAYABLE EXPERIENCE / ROBLOX" data-description="Step inside a playable project. Watch the trailer and explore the experience on Roblox." data-tab="roblox" aria-label="Select Shoot at the Doors"><img src="https://i.ytimg.com/vi/_7_Asty2Rl0/hqdefault.jpg" alt="Shoot at the Doors trailer" width="480" height="360" loading="lazy" draggable="false"><span class="arc-card__top">ROBLOX <span>06</span></span><span class="arc-card__bottom">Shoot at the Doors <span aria-hidden="true">↗</span></span></button>
+        <button class="arc-card arc-card--character" data-title="Characters with personality" data-category="CHARACTER MODELING / BLENDER" data-description="Expressive silhouettes and playful forms, from character studies to models for Roblox." data-tab="blender" data-subtab="proyectos" aria-label="Select character modeling"><img src="images/blender/Ash-OC.png" alt="Ash OC character model" width="600" height="600" loading="lazy" draggable="false"><span class="arc-card__top">CHARACTERS <span>07</span></span><span class="arc-card__bottom">Character studies <span aria-hidden="true">↗</span></span></button>
       </div>
+      <div class="arc-details"><div class="arc-copy"><p class="eyebrow" id="arcCategory">MAPS & ENVIRONMENTS / BLENDER</p><h3 id="arcTitle">Worlds worth exploring</h3><p id="arcDescription">Themed environments with their own layouts, atmosphere, and visual details. Take a tour through the map showcases.</p><a href="#proyectos" id="arcExplore" data-go-tab="blender" data-go-subtab="mapas" class="text-link">Explore collection <span aria-hidden="true">↗</span></a></div><div class="arc-navigation"><div class="arc-controls"><button class="icon-button" id="arcPrev" aria-label="Previous selected work">←</button><span id="arcCount" aria-live="polite" aria-atomic="true">01 / 07</span><button class="icon-button" id="arcNext" aria-label="Next selected work">→</button></div><div class="arc-dots" id="arcDots" aria-label="Choose selected work"></div></div></div>
     </div>
   </section>
 
   <!-- ============ PROYECTOS ============ -->
   <section id="proyectos" class="projects">
     <div class="section-head">
-      <p class="eyebrow">// projects</p>
-      <h2>Everything I've built</h2>
+      <p class="eyebrow">02 / THE PROJECT FILES</p>
+      <h2>Open. Explore. Get inspired<span class="accent">.</span></h2>
       <p class="section-head__description">From character studies to playable worlds. Explore a collection below.</p>
     </div>
 
@@ -186,22 +175,41 @@
 
   </section>
 
+  <section id="about" class="about section-shell" aria-labelledby="aboutTitle">
+    <div class="about__intro reveal"><p class="eyebrow">03 / BEHIND THE WORK</p><h2 id="aboutTitle">An artist's eye.<br>A developer's mind<span class="accent">.</span></h2><p id="heroBio">I combine code and 3D design to build interactive projects.</p><div class="about__disciplines"><span>Blender</span><span>Roblox Studio</span><span>Web development</span></div></div>
+    <div class="terminal reveal" aria-label="Profile details"><div class="terminal__bar"><span class="terminal__light terminal__light--r"></span><span class="terminal__light terminal__light--y"></span><span class="terminal__light terminal__light--g"></span><span class="terminal__title">whoami.sh</span></div><div class="terminal__body"><p class="terminal__line"><span class="terminal__prompt">$</span> whoami</p><dl class="terminal__fields"><div class="terminal__row"><dt>name</dt><dd id="tName">Fabricio</dd></div><div class="terminal__row"><dt>role</dt><dd id="tRole">3D Modeler · Developer</dd></div><div class="terminal__row"><dt>location</dt><dd id="tLocation">Remote</dd></div><div class="terminal__row"><dt>experience</dt><dd id="tExperience">2+ years of experience</dd></div><div class="terminal__row"><dt>status</dt><dd id="tAvailability" class="terminal__status">Available for freelance projects</dd></div></dl><p class="terminal__line terminal__cursor"><span class="terminal__prompt">$</span> <span class="blink">▍</span></p></div></div>
+    <div class="approach"><article class="reveal"><span class="approach__number">01 / SHAPE</span><h3>Give an idea its form.</h3><p>Characters, stylized weapons, and props with a distinct visual personality.</p></article><article class="reveal"><span class="approach__number">02 / BUILD</span><h3>Create a world around it.</h3><p>Environments, maps, and animations that connect individual details into an experience.</p></article><article class="reveal"><span class="approach__number">03 / CONNECT</span><h3>Make it interactive.</h3><p>Roblox experiences, websites, and software that bring design and code together.</p></article></div>
+  </section>
+
   <!-- ============ CONTACTO ============ -->
   <section id="contacto" class="contact">
     <div class="section-head">
-      <p class="eyebrow">// contact</p>
-      <h2>Let's talk about your next project</h2>
+      <p class="eyebrow">04 / YOUR NEXT IDEA</p>
+      <p class="contact__availability"><span class="status-dot"></span>Available for freelance projects</p>
+      <h2>Let's make<br>something <span class="gradient-text">real.</span></h2>
+      <p class="section-head__description">A character, a world, a product. Tell me what you have in mind.</p>
     </div>
     <div class="contact__row">
-      <a id="contactEmail" class="btn btn--primary" href="mailto:">Send an email</a>
-      <div class="contact__social" id="contactSocial"></div>
+      <a id="contactEmail" class="btn btn--primary" href="mailto:fabriciocontact04@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
+      <button id="copyEmail" class="text-link" type="button">Copy email <span aria-hidden="true">⧉</span></button><span id="copyStatus" class="sr-only" role="status"></span>
     </div>
+    <aside class="social-space" aria-label="Social profiles">
+      <p class="eyebrow">A LITTLE CLOSER, ONLINE</p>
+      <div class="social-orbit" id="socialOrbit">
+        <div class="social-orbit__guides" aria-hidden="true">
+          <span class="social-orbit__ring"></span>
+          <span class="social-orbit__ring social-orbit__ring--inner"></span>
+        </div>
+        <div class="contact__social" id="contactSocial"></div>
+      </div>
+      <p class="social-space__hint">Pick a bubble. Let's connect. <span aria-hidden="true">↗</span></p>
+    </aside>
   </section>
 
 </main>
 
 <footer class="footer">
-<p>© <span id="year"></span> <span id="footerName">Fabricio</span>. Made with Blender, code, and lots of coffee.</p>
+<a class="nav__brand" href="#top"><span class="nav__mark" aria-hidden="true">f.</span><span id="footerName">Fabricio</span></a><p>© <span id="year"></span> · Crafted with curiosity. Built with purpose.</p><a href="#top" class="text-link">Back to top ↑</a>
 </footer>
 
 <!-- ============ LIGHTBOX ============ -->
@@ -216,7 +224,9 @@
   <p class="lightbox__hint">Use ← → to browse · Esc to close</p>
 </dialog>
 
-<script src="data.js?v=20261011"></script>
-<script src="script.js?v=20261011"></script>
+<script src="data.js?v=20261021c"></script>
+<script src="script.js?v=20261021c"></script>
+<script src="motion.js?v=20261021c"></script>
+<script src="scene.js?v=20261021c" defer></script>
 </body>
 </html>

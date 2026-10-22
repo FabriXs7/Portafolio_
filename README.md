@@ -2,6 +2,12 @@
 
 Public portfolio: [fabrixs7.github.io/Portafolio_](https://fabrixs7.github.io/Portafolio_/).
 
+### Portfolio redesign
+
+The portfolio uses a black-and-white foundation with blue and gold accents, an interactive Three.js F monogram, a seven-category selected-work carousel, and floating social links. Motion respects reduced-motion preferences and pauses when hidden or offscreen. Project imagery retains its original colors.
+
+`motion.js` handles interface motion and `scene.js` manages the 3D study. Three.js is served locally with its MIT license in `vendor/THREE-LICENSE.txt`. Social SVGs come from Simple Icons, with the CC0 license in `images/social/LICENSE.md`. The atmospheric studio background was created in Google Flow for this portfolio.
+
 ### Collections added in October 2026
 
 - `blender.weapons`: 17 weapon models in collection order, with English names and descriptions. Images live in `images/weapons/`.
