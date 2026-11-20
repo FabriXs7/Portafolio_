@@ -12,6 +12,15 @@
   Object.entries(profileFields).forEach(([id, key]) => setText(id, profile[key]));
   setText("year", new Date().getFullYear());
 
+  const whatsappButton = document.getElementById("contactWhatsapp");
+  if (whatsappButton) {
+    const digits = String(profile.phone || "").replace(/\D/g, "");
+    if (digits) {
+      whatsappButton.href = "https://wa.me/" + digits;
+      whatsappButton.hidden = false;
+    }
+  }
+
   const emailButton = document.getElementById("contactEmail");
   if (emailButton && profile.email) {
     emailButton.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(profile.email);
@@ -110,13 +119,14 @@
     const card = document.createElement("article");
     card.className = "video-card" + (item.link ? " video-card--experience" : "");
     const videoId = getYouTubeId(item.youtube);
-    card.innerHTML = `<div class="video-card__frame" data-video-id="${escapeAttr(videoId || "")}" data-video-title="${escapeAttr(item.title || "Video")}"></div>
+    const linkLabel = item.linkLabel || "Play on Roblox";
+    card.innerHTML = `<div class="video-card__frame" data-video-id="${escapeAttr(videoId || "")}" data-video-src="${escapeAttr(item.video || "")}" data-video-poster="${escapeAttr(item.poster || "")}" data-video-title="${escapeAttr(item.title || "Video")}"></div>
       <div class="video-card__body">
         ${item.tag ? `<span class="asset-tag">${escapeHtml(item.tag)}</span>` : ""}
         <h3>${escapeHtml(item.title || "Video showcase")}</h3>
         ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
         <div class="video-card__actions">
-          ${item.link ? `<a class="btn btn--primary btn--small" href="${escapeAttr(safeUrl(item.link))}" target="_blank" rel="noopener noreferrer">Play on Roblox <span aria-hidden="true">↗</span></a>` : ""}
+          ${item.link ? `<a class="btn btn--primary btn--small" href="${escapeAttr(safeUrl(item.link))}" target="_blank" rel="noopener noreferrer">${escapeHtml(linkLabel)} <span aria-hidden="true">↗</span></a>` : ""}
           ${videoId ? `<a class="video-card__link" href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>` : ""}
         </div>
       </div>`;
@@ -126,7 +136,13 @@
 
   function resetVideoFrame(frame) {
     const id = frame.dataset.videoId;
+    const src = frame.dataset.videoSrc;
     const title = frame.dataset.videoTitle;
+    if (src) {
+      const poster = frame.dataset.videoPoster;
+      frame.innerHTML = `<button class="video-card__preview" type="button" data-play-video aria-label="Play ${escapeAttr(title)}">${poster ? `<img src="${escapeAttr(poster)}" alt="${escapeAttr(title)} preview" loading="lazy" decoding="async">` : ""}<span class="video-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="video-card__watch" aria-hidden="true">Play demo</span></button>`;
+      return;
+    }
     frame.innerHTML = id ? `<button class="video-card__preview" type="button" data-play-video aria-label="Play ${escapeAttr(title)}"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${escapeAttr(title)} preview" loading="lazy" decoding="async"><span class="video-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="video-card__watch" aria-hidden="true">Play showcase</span></button>` : '<span class="card__placeholder">Video preview unavailable</span>';
   }
 
@@ -134,6 +150,21 @@
     const playButton = event.target.closest("[data-play-video]");
     if (!playButton) return;
     const frame = playButton.closest(".video-card__frame");
+    if (frame.dataset.videoSrc) {
+      stopVideos();
+      const video = document.createElement("video");
+      video.src = frame.dataset.videoSrc;
+      if (frame.dataset.videoPoster) video.poster = frame.dataset.videoPoster;
+      video.controls = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.preload = "auto";
+      video.setAttribute("aria-label", frame.dataset.videoTitle);
+      frame.replaceChildren(video);
+      video.play().catch(() => {});
+      video.focus();
+      return;
+    }
     const iframe = document.createElement("iframe");
     iframe.src = "https://www.youtube-nocookie.com/embed/" + frame.dataset.videoId + "?autoplay=1&rel=0&hl=en";
     iframe.title = frame.dataset.videoTitle;
@@ -145,7 +176,7 @@
   });
 
   function stopVideos() {
-    document.querySelectorAll(".video-card__frame iframe").forEach((iframe) => resetVideoFrame(iframe.parentElement));
+    document.querySelectorAll(".video-card__frame iframe, .video-card__frame video").forEach((player) => resetVideoFrame(player.parentElement));
   }
 
   function buildSoftwareCard(item) {

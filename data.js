@@ -11,8 +11,8 @@ window.SITE_DATA = {
     experience: "2+ years of experience",
     bio: "I develop software and websites, and I model and design 3D maps and objects in Blender for Roblox. I also create and upload ready-to-use digital assets. I combine code and 3D design to build interactive projects.",
     email: "fabriciocontact04@gmail.com",
+    phone: "+51 982 188 959",
     social: [
-      { label: "Instagram", url: "https://www.instagram.com/ffabri_lm/" },
       { label: "X", url: "https://x.com/XgFabri55371" },
       { label: "Discord", url: "https://discord.com/users/1043719320410280016" }
     ]
@@ -612,11 +612,78 @@ window.SITE_DATA = {
   ],
 
   // ---------- PROYECTOS DE PÁGINAS WEB ---------- 
+  // video + poster: archivos en images/web/. link opcional abre el sitio publicado.
   web: [
     {
+      title: "LAFQUEN Valle Medio",
+      tag: "Client project · Live site",
+      video: "images/web/demo-lafquen.mp4",
+      poster: "images/web/demo-lafquen.jpg",
+      link: "https://lafquen.com/",
+      linkLabel: "Visit site",
+      description: "Website for a pool builder in Argentina: every model shown at real scale, a day-to-night slider over a real installation, a project gallery, and inquiries through WhatsApp."
+    },
+    {
+      title: "Adoptalia",
+      tag: "Personal product · Live",
+      video: "images/web/demo-adoptalia.mp4",
+      poster: "images/web/demo-adoptalia.jpg",
+      description: "Free, nonprofit adoption platform that connects shelters with families: swipe-style matching by country and city, shelter profiles, lost and found pets, and five languages."
+    },
+    {
+      title: "The King · Premium landing",
+      tag: "Prospect demo",
+      video: "images/web/demo-the-king-landing.mp4",
+      poster: "images/web/demo-the-king-landing.jpg",
+      description: "Dark, premium landing for a watch shop: floating hero, horizontal collection, and a watch configurator drawn in SVG with the real time."
+    },
+    {
+      title: "The King · Online store",
+      tag: "Prospect demo",
+      video: "images/web/demo-the-king-tienda.mp4",
+      poster: "images/web/demo-the-king-tienda.jpg",
+      description: "Store with filters by style, strap and dial color, product pages, shopping bag and a wholesale section. Orders are sent through WhatsApp."
+    },
+    {
+      title: "Natsa",
+      tag: "Prospect demo",
+      video: "images/web/demo-natsa.mp4",
+      poster: "images/web/demo-natsa.jpg",
+      description: "Campaign landing for a sportswear brand: animated hero, collection looks, and product pages with sizes, colors and a shopping bag."
+    },
+    {
+      title: "Pollito Torres",
+      tag: "Prospect demo",
+      video: "images/web/demo-pollito-torres.mp4",
+      poster: "images/web/demo-pollito-torres.jpg",
+      description: "Menu for a rotisserie chicken restaurant: combos and prices, an order builder confirmed through WhatsApp, and a map to the location."
+    },
+    {
+      title: "LoveMask",
+      tag: "Concept demo",
+      video: "images/web/demo-lovemask.mp4",
+      poster: "images/web/demo-lovemask.jpg",
+      description: "Leather bag brand with a warm visual identity and scroll-driven motion."
+    },
+    {
+      title: "SPACE",
+      tag: "Concept demo",
+      video: "images/web/demo-space.mp4",
+      poster: "images/web/demo-space.jpg",
+      description: "Gift shop where a pixel flower builds itself as you scroll, leading into the catalog."
+    },
+    {
+      title: "Para ti",
+      tag: "Concept demo",
+      video: "images/web/demo-para-ti.mp4",
+      poster: "images/web/demo-para-ti.jpg",
+      description: "Flower shop where a tulip opens as you scroll, followed by the catalog and gifts for each occasion."
+    },
+    {
       title: "Pgod Points Store",
+      tag: "Prospect demo",
       youtube: "https://youtu.be/9cgJQKQVW24",
-      description: "A website connected to Twitch to create a marketplace for users, along with a gambling system with multipliers."
+      description: "Proposal for a Twitch community: a points store where viewers redeem rewards, with a multiplier-based rewards system."
     }
   ],
 
